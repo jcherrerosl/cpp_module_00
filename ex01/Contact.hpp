@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:06:00 by juanherr          #+#    #+#             */
-/*   Updated: 2025/05/06 13:06:06 by juanherr         ###   ########.fr       */
+/*   Updated: 2025/05/07 00:59:34 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ class Contact
 	std::string getDarkestSecret() const;
 
   private:
-	std::string firstName;
-	std::string lastName;
-	std::string nickname;
-	std::string phoneNumber;
-	std::string darkestSecret;
+	std::string _firstName;
+	std::string _lastName;
+	std::string _nickname;
+	std::string _phoneNumber;
+	std::string _darkestSecret;
 };
 
 #endif

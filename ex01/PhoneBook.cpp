@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:58:39 by juanherr          #+#    #+#             */
-/*   Updated: 2025/05/06 13:41:09 by juanherr         ###   ########.fr       */
+/*   Updated: 2025/05/09 00:42:29 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,14 @@
 #include <limits>
 
 PhoneBook::PhoneBook()
-	: count(0), oldestIndex(0)
+	: count(0)
 {
 }
 
 void PhoneBook::addContact()
 {
-	if (count < 8)
-	{
-		contacts[count].setInfo();
-		count++;
-	}
-	else
-	{
-		contacts[oldestIndex].setInfo();
-		oldestIndex = (oldestIndex + 1) % 8;
-	}
+	contacts[count % 8].setInfo();
+	count++;
 }
 
 std::string truncate(const std::string &str)
