@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:58:39 by juanherr          #+#    #+#             */
-/*   Updated: 2025/05/09 00:42:29 by juanherr         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:00:58 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,5 @@ void PhoneBook::searchContacts() const
 			std::cout << "Darkest secret:\t" << c.getDarkestSecret() << std::endl;
 			break ;
 		}
-
-		std::cout << "Index out of range. Try again or press 0 to return." << std::endl;
 	}
 }
