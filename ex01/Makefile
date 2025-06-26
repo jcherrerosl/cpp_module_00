@@ -3,23 +3,26 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS =	Contact.cpp \
 		PhoneBook.cpp \
 		main.cpp
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(SRCS:%.cpp=build/%.o)
 NAME = phonebook
 RM = rm -f
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "Compiled!"
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+build/%.o: %.cpp
+	@mkdir -p build; $(CC) $(CFLAGS) -c $< -o $@
 
-clean:	
-	$(RM) $(OBJS)
+clean:
+	@rm -rf build
+	@echo "Cleaned build files!"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "Cleaned executable!"
 
 re: fclean all
 .PHONY: all clean fclean re
